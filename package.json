@@ -1,0 +1,11 @@
+{
+  "name": "ghost-lite",
+  "version": "0.0.0",
+  "description": "A basic starting point.",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt validate --verbose"
+  },
+  "author": "Jon Holt",
+  "license": "ISC"
+}
