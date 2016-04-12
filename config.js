@@ -33,7 +33,6 @@ config = {
         url: 'http://localhost:2520',
 
         // Example mail config
-        // Visit http://support.ghost.org/mail for instructions
         // ```
         //  mail: {
         //      transport: 'SMTP',

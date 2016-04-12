@@ -1,0 +1,123 @@
+{
+    "models": [
+        {
+            "name": "Client",
+            "entries": [
+                {
+                    "name":             "App Admin",
+                    "slug":             "app-admin",
+                    "status":           "enabled"
+                },
+                {
+                    "name":             "App Frontend",
+                    "slug":             "app-frontend",
+                    "status":           "enabled"
+                }
+            ]
+        },
+        {
+            "name": "Role",
+            "entries": [
+            {
+                "name":             "Owner",
+                "description":      "App Owner"
+            },
+            {
+                "name":             "Administrator",
+                "description":      "Administrators"
+            },
+            {
+                "name":             "User",
+                "description":      "User"
+            }                
+            ]
+        },
+        {
+            "name": "Permission",
+            "entries": [
+                {
+                    "name": "Send mail",
+                    "action_type": "send",
+                    "object_type": "mail"
+                },
+                {
+                    "name": "Browse settings",
+                    "action_type": "browse",
+                    "object_type": "setting"
+                },
+                {
+                    "name": "Read settings",
+                    "action_type": "read",
+                    "object_type": "setting"
+                },
+                {
+                    "name": "Edit settings",
+                    "action_type": "edit",
+                    "object_type": "setting"
+                },
+                {
+                    "name": "Browse users",
+                    "action_type": "browse",
+                    "object_type": "user"
+                },
+                {
+                    "name": "Read users",
+                    "action_type": "read",
+                    "object_type": "user"
+                },
+                {
+                    "name": "Edit users",
+                    "action_type": "edit",
+                    "object_type": "user"
+                },
+                {
+                    "name": "Add users",
+                    "action_type": "add",
+                    "object_type": "user"
+                },
+                {
+                    "name": "Delete users",
+                    "action_type": "destroy",
+                    "object_type": "user"
+                },
+                {
+                    "name": "Assign a role",
+                    "action_type": "assign",
+                    "object_type": "role"
+                },
+                {
+                    "name": "Browse roles",
+                    "action_type": "browse",
+                    "object_type": "role"
+                }
+            ]
+        }
+
+    ],
+    "relations": [
+        {
+            "from": {
+                "model": "Role",
+                "match": "name",
+                "relation": "permissions"
+            },
+            "to": {
+                "model": "Permission",
+                "match": ["object_type", "action_type"]
+            },
+            "entries": {
+                "Administrator": {
+                    "db": "all",
+                    "mail": "all",
+                    "setting": "all",
+                    "user": "all",
+                    "role": "all"
+                },
+                "User": {
+                    "setting": ["browse", "read"],
+                    "role": "all"
+                }
+            }
+        }
+    ]
+}

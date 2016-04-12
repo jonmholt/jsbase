@@ -57,7 +57,7 @@ var escapeChar     = process.platform.match(/^win/) ? '^' : '\\',
                     src: ['<%= paths.releaseBuild %>/**']
                 },
                 test: {
-                    src: ['content/data/ghost-test.db']
+                    src: ['content/data/app-test.db']
                 },
                 tmp: {
                     src: ['.tmp/**']
@@ -277,7 +277,7 @@ var escapeChar     = process.platform.match(/^win/) ? '^' : '\\',
         // frontend code changes.
         grunt.registerTask('dev', 'Dev Mode; watch files and restart server on changes',
            //['bgShell:ember', 'express:dev', 'watch']);
-           ['express:dev', 'watch']);
+           ['express:dev']);//, 'watch']);
 
         // ### Default asset build
         // `grunt` - default grunt task

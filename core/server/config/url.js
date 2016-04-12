@@ -69,9 +69,9 @@ function urlJoin() {
 // Ensures that our urls contain the subdirectory if there is one
 // And are correctly formatted as either relative or absolute
 // Usage:
-// createUrl('/', true) -> http://my-ghost-blog.com/
-// E.g. /blog/ subdir
-// createUrl('/welcome-to-ghost/') -> /blog/welcome-to-ghost/
+// createUrl('/', true) -> http://my-app.com/
+// E.g. /app/ subdir
+// createUrl('/welcome-to-my-app/') -> /app/welcome-to-my-app/
 // Parameters:
 // - urlPath - string which must start and end with a slash
 // - absolute (optional, default:false) - boolean whether or not the url should be absolute
